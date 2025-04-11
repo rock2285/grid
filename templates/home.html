@@ -1,0 +1,26 @@
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'css/s.css' %}">
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"></script>
+    <script src="{% static 'js/action.js' %}"></script>
+  </head>
+<body>
+  <p>Select a cell to add an offset</p>
+  <table id="grid">
+  {% for row in r %}
+    <tr>
+    {% for col in r %}
+    <td class="cell" id="r{{row}}c{{col}}">0</td>
+    {% endfor %}
+    </tr>
+  {% endfor %}
+  <tr><td colspan=2>
+  <input id="offset" type="input" size="5"/></td>
+  <td><button id="send">+</button><br/></td>
+  </table>
+</body>
+</html>
